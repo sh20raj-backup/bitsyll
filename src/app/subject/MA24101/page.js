@@ -48,8 +48,13 @@ export default function Page() {
         <AccordionItem value="PYQs">
           <AccordionTrigger>PYQs</AccordionTrigger>
           <AccordionContent>
-            <PDFs />
+            <PYQs />
           </AccordionContent>
+        </AccordionItem>
+
+        <AccordionItem value="item-5">
+          <AccordionTrigger>Best YouTube Videos</AccordionTrigger>
+          <AccordionContent></AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-3">
           <AccordionTrigger>Important Links</AccordionTrigger>
@@ -57,23 +62,16 @@ export default function Page() {
             <ImportantData showHeading={false} />
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value="item-5">
-          <AccordionTrigger>Best YouTube Videos</AccordionTrigger>
-          <AccordionContent></AccordionContent>
-        </AccordionItem>
         <AccordionItem value="item-4">
           <AccordionTrigger>Contributions/Credits</AccordionTrigger>
           <AccordionContent>
-            <div className="p-6">
-              <h3 className="text-xl font-semibold ">Contributions</h3>
-              <p className="text-gray-700">
-                This page is contributed by <SH20RAJ />.
-              </p>
-            </div>
+            <p className="text-gray-700">
+              This page is contributed by <SH20RAJ />.
+            </p>
+            <p>Get your name here by contributing to this page.</p>
           </AccordionContent>
         </AccordionItem>
       </Accordion>
-
 
       <SuggestButton />
 
@@ -152,48 +150,77 @@ export function Syllabus() {
 }
 
 export function PDFs() {
+  let pdfs = [
+    {
+      title: "Module 1: Sequences and Series",
+      link: "https://drive.google.com/file/d/1tLDg12YncZmYcBeRqfo_ml24n4_2MfRs/view?usp=drive_link",
+    },
+    {
+      title: "Module 2: Matrices",
+      link: "https://drive.google.com/file/d/1v7JscEa11gJGECiNMjes7vhSlybI9G8a/view?usp=sharing",
+    },
+    {
+      title: "Module 3: Advance Differential Calculus",
+      link: "https://drive.google.com/file/d/1Zb0id9PwC8PqwnZCpC9JG6GJRPq5D36c/view?usp=sharing",
+    },
+    {
+      title: "Module 4: Advance Integral Calculus",
+      link: "https://drive.google.com/file/d/1Zb0id9PwC8PqwnZCpC9JG6GJRPq5D36c/view?usp=sharing",
+    },
+    {
+      title: "Module 5: Vector Calculus",
+      link: "https://drive.google.com/file/d/1OJkYqiHwgxfLFrHezv40d2_OGn3J-LTC/view?usp=sharing",
+    },
+  ];
   return (
-    <div className="pdfs shadow-lg rounded-lg p-6">
-      <div className="module mb-6">
-        <h3 className="text-xl font-semibold ">
-          Module 1: Sequences and Series
-        </h3>
-        <p className="text-gray-700">
-          <a href="https://www.google.com">Download PDF</a>
-        </p>
-      </div>
+    <div className="pdfs">
+      {pdfs.map((pdf, index) => (
+        <div key={index} className="pdf mb-4">
+          <a href={pdf.link} target="_blank" className="text-blue-500">
+            {pdf.title}
+          </a>
+        </div>
+      ))}
+    </div>
+  );
+}
 
-      <div className="module mb-6">
-        <h3 className="text-xl font-semibold ">Module 2: Matrices</h3>
-        <p className="text-gray-700">
-          <a href="https://www.google.com">Download PDF</a>
-        </p>
-      </div>
-
-      <div className="module mb-6">
-        <h3 className="text-xl font-semibold ">
-          Module 3: Advance Differential Calculus
-        </h3>
-        <p className="text-gray-700">
-          <a href="https://www.google.com">Download PDF</a>
-        </p>
-      </div>
-
-      <div className="module mb-6">
-        <h3 className="text-xl font-semibold ">
-          Module 4: Advance Integral Calculus
-        </h3>
-        <p className="text-gray-700">
-          <a href="https://www.google.com">Download PDF</a>
-        </p>
-      </div>
-
-      <div className="module mb-6">
-        <h3 className="text-xl font-semibold ">Module 5: Vector Calculus</h3>
-        <p className="text-gray-700">
-          <a href="https://www.google.com">Download PDF</a>
-        </p>
-      </div>
+export function PYQs() {
+  let pdfs = [
+    {
+      title: "Mid Sem 2023",
+      link: "https://drive.google.com/file/d/1cWlwkcj4yIMe0lCqnL76xaF-OL89pp0W/view?usp=sharing",
+    },
+    {
+      title: "End Sem 2023",
+      link: "https://drive.google.com/file/d/1cWlwkcj4yIMe0lCqnL76xaF-OL89pp0W/view?usp=sharing",
+    },
+    {
+      title: "Mid Sem 2022",
+      link: "https://drive.google.com/file/d/1cWlwkcj4yIMe0lCqnL76xaF-OL89pp0W/view?usp=sharing",
+    },
+    {
+      title: "End Sem 2022",
+      link: "https://drive.google.com/file/d/1cWlwkcj4yIMe0lCqnL76xaF-OL89pp0W/view?usp=sharing",
+    },
+    {
+      title: "Mid Sem 2021",
+      link: "https://drive.google.com/file/d/1cWlwkcj4yIMe0lCqnL76xaF-OL89pp0W/view?usp=sharing",
+    },
+    {
+      title: "End Sem 2021",
+      link: "https://drive.google.com/file/d/1cWlwkcj4yIMe0lCqnL76xaF-OL89pp0W/view?usp=sharing",
+    },
+  ];
+  return (
+    <div className="pyqs">
+      {pdfs.map((pdf, index) => (
+        <div key={index} className="pdf mb-4">
+          <a href={pdf.link} target="_blank" className="text-blue-500">
+            {pdf.title}
+          </a>
+        </div>
+      ))}
     </div>
   );
 }
